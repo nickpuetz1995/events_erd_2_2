@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :rsvp_statuses
   resources :comments
   resources :events
   devise_for :users
