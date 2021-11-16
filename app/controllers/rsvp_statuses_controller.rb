@@ -42,8 +42,14 @@ class RsvpStatusesController < ApplicationController
   # DELETE /rsvp_statuses/1
   def destroy
     @rsvp_status.destroy
-    redirect_to rsvp_statuses_url, notice: 'Rsvp status was successfully destroyed.'
+    message = "RsvpStatus was successfully deleted."
+    if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+      redirect_back fallback_location: request.referrer, notice: message
+    else
+      redirect_to rsvp_statuses_url, notice: message
+    end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
