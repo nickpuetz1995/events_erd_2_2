@@ -13,6 +13,8 @@ class EventResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :rsvp_statuses
+
   has_many   :comments
 
   belongs_to :host,
