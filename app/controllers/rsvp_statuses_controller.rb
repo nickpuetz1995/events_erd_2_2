@@ -3,7 +3,8 @@ class RsvpStatusesController < ApplicationController
 
   # GET /rsvp_statuses
   def index
-    @rsvp_statuses = RsvpStatus.page(params[:page]).per(10)
+    @q = RsvpStatus.ransack(params[:q])
+    @rsvp_statuses = @q.result(:distinct => true).includes(:user, :event).page(params[:page]).per(10)
   end
 
   # GET /rsvp_statuses/1
