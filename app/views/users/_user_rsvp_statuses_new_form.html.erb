@@ -1,0 +1,32 @@
+<!-- Form rsvp_status start -->
+<%= form_with(model: @rsvp_status, local: true) do |f| %>
+<!-- Form rsvp_status end -->
+
+  <!-- Label and input for event_id start -->
+  <div class="form-group">
+    <%= f.label :event_id %>
+
+    <!-- Input for event_id start -->
+    <%= f.text_field :event_id, class: "form-control" %>
+    <!-- Input for event_id end -->
+  </div>
+  <!-- Label and input for event_id end -->
+
+  <!-- Label and input for user_id start -->
+  <!-- Input for user_id start -->
+  <%= f.hidden_field :user_id, value: @user.id %>
+  <!-- Input for user_id end -->
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for rsvp_status start -->
+  <div class="form-group">
+    <%= f.label :rsvp_status %>
+
+    <!-- Input for rsvp_status start -->
+    <%= f.text_field :rsvp_status, class: "form-control" %>
+    <!-- Input for rsvp_status end -->
+  </div>
+  <!-- Label and input for rsvp_status end -->
+
+  <%= f.submit "Create rsvp status", class: "btn btn-block btn-outline-secondary" %>
+<% end %>

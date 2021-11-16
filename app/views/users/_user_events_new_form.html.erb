@@ -1,0 +1,82 @@
+<!-- Form event start -->
+<%= form_with(model: @event, local: true) do |f| %>
+<!-- Form event end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <%= f.label :name %>
+
+    <!-- Input for name start -->
+    <%= f.text_field :name, class: "form-control" %>
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for location start -->
+  <div class="form-group">
+    <%= f.label :location %>
+
+    <!-- Input for location start -->
+    <%= f.text_field :location, class: "form-control" %>
+    <!-- Input for location end -->
+  </div>
+  <!-- Label and input for location end -->
+
+  <!-- Label and input for host_id start -->
+  <!-- Input for host_id start -->
+  <%= f.hidden_field :host_id, value: @user.id %>
+  <!-- Input for host_id end -->
+  <!-- Label and input for host_id end -->
+
+  <!-- Label and input for details start -->
+  <div class="form-group">
+    <%= f.label :details %>
+
+    <!-- Input for details start -->
+    <%= f.text_field :details, class: "form-control" %>
+    <!-- Input for details end -->
+  </div>
+  <!-- Label and input for details end -->
+
+  <!-- Label and input for start_date start -->
+  <div class="form-group">
+    <%= f.label :start_date %>
+
+    <!-- Input for start_date start -->
+    <%= f.date_select :start_date, class: "form-control" %>
+    <!-- Input for start_date end -->
+  </div>
+  <!-- Label and input for start_date end -->
+
+  <!-- Label and input for start_time start -->
+  <div class="form-group">
+    <%= f.label :start_time %>
+
+    <!-- Input for start_time start -->
+    <%= f.date_select :start_time, class: "form-control" %>
+    <!-- Input for start_time end -->
+  </div>
+  <!-- Label and input for start_time end -->
+
+  <!-- Label and input for end_date start -->
+  <div class="form-group">
+    <%= f.label :end_date %>
+
+    <!-- Input for end_date start -->
+    <%= f.date_select :end_date, class: "form-control" %>
+    <!-- Input for end_date end -->
+  </div>
+  <!-- Label and input for end_date end -->
+
+  <!-- Label and input for end_time start -->
+  <div class="form-group">
+    <%= f.label :end_time %>
+
+    <!-- Input for end_time start -->
+    <%= f.date_select :end_time, class: "form-control" %>
+    <!-- Input for end_time end -->
+  </div>
+  <!-- Label and input for end_time end -->
+
+  <%= f.submit "Create event", class: "btn btn-block btn-outline-secondary" %>
+<% end %>
