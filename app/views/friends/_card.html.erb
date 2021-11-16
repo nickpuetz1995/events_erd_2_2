@@ -7,7 +7,11 @@
     <dl class="mb-1">
       <dt>User id1</dt>
       <!-- Display user_id1 start -->
-      <dd><%= friend.user_id1 %></dd>
+      <dd>
+        <% if @friend.user.present? %>
+          <%= link_to friend.user, friend.user %>
+        <% end %>
+      </dd>
       <!-- Display user_id1 end -->
 
       <dt>User id2</dt>

@@ -17,7 +17,11 @@
 
       <dt>Host</dt>
       <!-- Display host_id start -->
-      <dd><%= event.host_id %></dd>
+      <dd>
+        <% if @event.host.present? %>
+          <%= link_to event.host, event.host %>
+        <% end %>
+      </dd>
       <!-- Display host_id end -->
 
       <dt>Details</dt>
