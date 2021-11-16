@@ -9,6 +9,8 @@ class UserResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :rsvp_statuses
+
   has_many   :events,
              foreign_key: :host_id
 
