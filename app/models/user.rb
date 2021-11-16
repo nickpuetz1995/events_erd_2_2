@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :friends,
+             :foreign_key => "user_id1",
+             :dependent => :destroy
+
   has_many   :comments,
              :dependent => :destroy
 
