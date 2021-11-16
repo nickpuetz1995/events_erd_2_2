@@ -1,5 +1,7 @@
 ActiveAdmin.register RsvpStatus do
 
+ permit_params :event_id, :user_id, :rsvp_status
+
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
