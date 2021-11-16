@@ -1,7 +1,6 @@
 <% was_validated = rsvp_status.errors.any? %>
 
 <%= form_with(model: rsvp_status, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for event_id start -->
   <div class="form-group">
     <% event_class = "form-control" %>
     <% event_was_invalid = rsvp_status.errors.include?(:event) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :event_id %>
-    <!-- Input for event_id start -->
     <%= f.collection_select :event_id, Event.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for event_id end -->
     <% if event_was_invalid %>
       <% rsvp_status.errors.full_messages_for(:event).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for event_id end -->
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <% user_class = "form-control" %>
     <% user_was_invalid = rsvp_status.errors.include?(:user) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :user_id %>
-    <!-- Input for user_id start -->
     <%= f.collection_select :user_id, User.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for user_id end -->
     <% if user_was_invalid %>
       <% rsvp_status.errors.full_messages_for(:user).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for user_id end -->
-  <!-- Label and input for rsvp_status start -->
   <div class="form-group">
     <% rsvp_status_class = "form-control" %>
     <% rsvp_status_was_invalid = rsvp_status.errors.include?(:rsvp_status) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :rsvp_status %>
-    <!-- Input for rsvp_status start -->
     <%= f.text_field :rsvp_status, class: rsvp_status_class, placeholder: "Enter rsvp status" %>
-    <!-- Input for rsvp_status end -->
     <% if rsvp_status_was_invalid %>
       <% rsvp_status.errors.full_messages_for(:rsvp_status).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,6 +67,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for rsvp_status end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

@@ -6,27 +6,21 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Event</dt>
-      <!-- Display event_id start -->
       <dd>
         <% if @rsvp_status.event.present? %>
           <%= link_to rsvp_status.event, rsvp_status.event %>
         <% end %>
       </dd>
-      <!-- Display event_id end -->
 
       <dt>User</dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @rsvp_status.user.present? %>
           <%= link_to rsvp_status.user, rsvp_status.user %>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>Rsvp status</dt>
-      <!-- Display rsvp_status start -->
       <dd><%= rsvp_status.rsvp_status %></dd>
-      <!-- Display rsvp_status end -->
 
     </dl>
 
@@ -35,21 +29,17 @@
         <%= link_to_show_or_back rsvp_status, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link rsvp_status start -->
       <div class="col">
         <%= link_to edit_rsvp_status_url(rsvp_status), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link rsvp_status end -->
 
-      <!-- Delete link rsvp_status start -->
       <div class="col">
         <%= link_to rsvp_status, method: :delete, data: { confirm: "Do you really want to delete this rsvp_status?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link rsvp_status end -->
     </div>
   </div>
 

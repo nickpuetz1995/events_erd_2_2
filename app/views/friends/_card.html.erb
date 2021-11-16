@@ -6,18 +6,14 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>User id1</dt>
-      <!-- Display user_id1 start -->
       <dd>
         <% if @friend.user.present? %>
           <%= link_to friend.user, friend.user %>
         <% end %>
       </dd>
-      <!-- Display user_id1 end -->
 
       <dt>User id2</dt>
-      <!-- Display user_id2 start -->
       <dd><%= friend.user_id2 %></dd>
-      <!-- Display user_id2 end -->
 
     </dl>
 
@@ -26,21 +22,17 @@
         <%= link_to_show_or_back friend, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link friend start -->
       <div class="col">
         <%= link_to edit_friend_url(friend), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link friend end -->
 
-      <!-- Delete link friend start -->
       <div class="col">
         <%= link_to friend, method: :delete, data: { confirm: "Do you really want to delete this friend?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link friend end -->
     </div>
   </div>
 
