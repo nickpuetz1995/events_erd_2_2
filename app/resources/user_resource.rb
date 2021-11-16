@@ -9,6 +9,9 @@ class UserResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :friends,
+             foreign_key: :user_id1
+
   has_many   :comments
 
   has_many   :rsvp_statuses
