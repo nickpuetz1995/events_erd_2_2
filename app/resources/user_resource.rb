@@ -20,5 +20,4 @@ class UserResource < ApplicationResource
              foreign_key: :host_id
 
   # Indirect associations
-
 end

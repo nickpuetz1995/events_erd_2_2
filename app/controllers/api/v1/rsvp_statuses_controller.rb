@@ -13,7 +13,7 @@ class Api::V1::RsvpStatusesController < Api::V1::GraphitiController
     rsvp_status = RsvpStatusResource.build(params)
 
     if rsvp_status.save
-      render jsonapi: rsvp_status, status: 201
+      render jsonapi: rsvp_status, status: :created
     else
       render jsonapi_errors: rsvp_status
     end
@@ -33,7 +33,7 @@ class Api::V1::RsvpStatusesController < Api::V1::GraphitiController
     rsvp_status = RsvpStatusResource.find(params)
 
     if rsvp_status.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: rsvp_status
     end

@@ -13,5 +13,4 @@ class RsvpStatusResource < ApplicationResource
   belongs_to :user
 
   # Indirect associations
-
 end

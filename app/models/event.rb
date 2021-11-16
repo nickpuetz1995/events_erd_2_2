@@ -2,13 +2,13 @@ class Event < ApplicationRecord
   # Direct associations
 
   has_many   :rsvp_statuses,
-             :dependent => :destroy
+             dependent: :destroy
 
   has_many   :comments,
-             :dependent => :destroy
+             dependent: :destroy
 
   belongs_to :host,
-             :class_name => "User"
+             class_name: "User"
 
   # Indirect associations
 
@@ -19,5 +19,4 @@ class Event < ApplicationRecord
   def to_s
     name
   end
-
 end

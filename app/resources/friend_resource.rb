@@ -11,5 +11,4 @@ class FriendResource < ApplicationResource
              foreign_key: :user_id1
 
   # Indirect associations
-
 end
