@@ -13,6 +13,9 @@ class EventResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :host,
+             resource: UserResource
+
   # Indirect associations
 
 end

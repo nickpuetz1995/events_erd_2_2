@@ -9,6 +9,9 @@ class UserResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :events,
+             foreign_key: :host_id
+
   # Indirect associations
 
 end
