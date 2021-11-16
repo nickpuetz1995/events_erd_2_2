@@ -3,7 +3,7 @@ class RsvpStatusesController < ApplicationController
 
   # GET /rsvp_statuses
   def index
-    @rsvp_statuses = RsvpStatus.all
+    @rsvp_statuses = RsvpStatus.page(params[:page]).per(10)
   end
 
   # GET /rsvp_statuses/1
