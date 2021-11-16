@@ -1,0 +1,57 @@
+<% was_validated = friend.errors.any? %>
+
+<%= form_with(model: friend, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for user_id1 start -->
+  <div class="form-group">
+    <% user_id1_class = "form-control" %>
+    <% user_id1_was_invalid = friend.errors.include?(:user_id1) %>
+
+    <% if was_validated %>
+      <% if user_id1_was_invalid %>
+        <% user_id1_class << " is-invalid" %>
+      <% else %>
+        <% user_id1_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :user_id1 %>
+    <!-- Input for user_id1 start -->
+    <%= f.number_field :user_id1, class: user_id1_class, placeholder: "Enter user id1" %>
+    <!-- Input for user_id1 end -->
+    <% if user_id1_was_invalid %>
+      <% friend.errors.full_messages_for(:user_id1).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for user_id1 end -->
+  <!-- Label and input for user_id2 start -->
+  <div class="form-group">
+    <% user_id2_class = "form-control" %>
+    <% user_id2_was_invalid = friend.errors.include?(:user_id2) %>
+
+    <% if was_validated %>
+      <% if user_id2_was_invalid %>
+        <% user_id2_class << " is-invalid" %>
+      <% else %>
+        <% user_id2_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :user_id2 %>
+    <!-- Input for user_id2 start -->
+    <%= f.number_field :user_id2, class: user_id2_class, placeholder: "Enter user id2" %>
+    <!-- Input for user_id2 end -->
+    <% if user_id2_was_invalid %>
+      <% friend.errors.full_messages_for(:user_id2).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for user_id2 end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
